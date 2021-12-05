@@ -20,10 +20,11 @@ public class UserInput {
 class AttendanceLog extends JFrame
 {
     Container c;
+	JFrame frame; //Frame used to open list in new window
     JLabel l,l1,l2,l3,l4,l5;
     JTextField t1,t2;
     JRadioButton r1,r2;
-    JButton b,k;
+    JButton b,k,v;
     JComboBox dept,date,month,year;
     String Dept[]
             ={
@@ -76,6 +77,7 @@ class AttendanceLog extends JFrame
 
         b=new JButton("ok");
         k=new JButton("View List");
+		v=new JButton("Back");
 
         ButtonGroup bg=new ButtonGroup();
         bg.add(r1);
@@ -123,6 +125,7 @@ class AttendanceLog extends JFrame
         //ok
         b.addActionListener(e-> {
             if(t1.getText().equals("") || t2.getText().equals("") || (!r1.isSelected() && !r2.isSelected()) ) {
+				//Displaying a warning message
                 JOptionPane.showConfirmDialog(null, "Please,enter your name and fill other details", "Attendance List", -1, JOptionPane.WARNING_MESSAGE);
             }
             else{
@@ -137,9 +140,9 @@ class AttendanceLog extends JFrame
                  String dpmt=dept.getSelectedItem()+"";
 
                 Listatt ent=new Listatt(t1.getText(),t2.getText(),dpmt,pr,Date);
-                UserInput.reg.addEntry(ent);
-				//list.display();
 
+                UserInput.reg.addEntry(ent);
+				//Displaying confirmational message
                 JOptionPane.showConfirmDialog(null,"Attendance Log Updated","Attendance List",-1,JOptionPane.INFORMATION_MESSAGE,null);
             }
 
@@ -150,8 +153,9 @@ class AttendanceLog extends JFrame
             @Override
             public void actionPerformed(ActionEvent e) {
                 //AttendanceLog al=new AttendanceLog();
-                JFrame frame=new JFrame("List");
-                frame.setBounds(250,250,500,500);
+                frame=new JFrame("List");
+                frame.setBounds(250,250,500,550);
+				frame.setLayout(new FlowLayout());
 				
 				Object regs[][] = new Object[UserInput.reg.getReg().size()][5];
 				for (int i = 0; i < UserInput.reg.getReg().size() ; i++){
@@ -165,11 +169,17 @@ class AttendanceLog extends JFrame
 				column[4] = "Present/Absent";
  				
                 JTable table=new JTable(regs, column);
+				JPanel back=new JPanel();
+				back.add(v);
                 JScrollPane pane=new JScrollPane(table);
-                frame.add(pane);
+				frame.add(pane);
+				frame.add(back);
                 frame.setVisible(true);
-            }
-        });
+			}
+	        });
+			v.addActionListener (e->{
+				frame.dispose();
+			});
 
         setVisible(true);
         setLayout(new FlowLayout());
