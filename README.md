@@ -9,7 +9,9 @@ This is a Attendance List application built using Java Swing.
  * In the terminal, run the command java attendance.UserInput
 
 ## Preview
-   Screenshot of the output screen ,When empty field is inserted 
+   Screenshot of the output screen ,when empty field is inserted 
    ![Emptyfield](snapshots/EmptyField.png)
- 
+   
+   Screenshot of the output window,when all the fields are inserted
+   ![ListUpdated](snapshots/Entries.png)
  
