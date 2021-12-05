@@ -7,7 +7,7 @@ This is a Attendance List application built using Java Swing.
  * Clone the repository or Download the .zip file from [here](https://github.com/Santhoshkumar32/SwingPractice/archive/refs/heads/main.zip)
  * Extract the folder SwingPractice-main and navigate to the base root.
  * In the terminal, run the command java attendance.UserInput
- * To see a layout,use [layout](Layout.pdf)
+ * To see the layout of the application,use [layout](Layout.pdf)
 
 ## Preview
    Screenshot of the output screen ,when empty field is inserted 
