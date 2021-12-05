@@ -15,3 +15,5 @@ This is a Attendance List application built using Java Swing.
    Screenshot of the output window,when all the fields are inserted
    ![ListUpdated](snapshots/Entries.png)
  
+   Screenshot of the Attendance List Interface
+   ![AttendanceLog](snapshots/AttenList.png)
