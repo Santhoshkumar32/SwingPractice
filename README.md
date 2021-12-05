@@ -8,6 +8,8 @@ This is a Attendance List application built using Java Swing.
  * Extract the folder SwingPractice-main and navigate to the base root.
  * In the terminal, run the command java attendance.UserInput
 
-##Preview
- *
+## Preview
+   Screenshot of the output screen ,When empty field is inserted 
+   ![Emptyfield](snapshots/EmptyField.png)
+ 
  
